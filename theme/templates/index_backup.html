@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+<body>
+	{% block content %}
+	<section>
+    	
+	<ul class="global-couverture">   
+	    <li>
+	    <ul class="couverture">
+	    	<li>
+	    	{% if articles_page.object_list[0].featured_image %}
+	          	<a href="{{ SITEURL }}/{{ articles_page.object_list[0].url }}" title="Permalink to {{ articles_page.object_list[0].title|striptags }}">
+	          		<img src="{{ SITEURL }}/{{ articles_page.object_list[0].featured_image }}" alt="image de couverture">
+	      		</a>
+		        {% endif %}
+		    </li>
+		    <li>
+		    	<ul class = 'couverture-titles'>
+			        <li>
+			        	<a href="{{ SITEURL }}/{{ articles_page.object_list[0].url }}"  title="Permalink to {{ articles_page.object_list[0].title|striptags }}"><h2>{{ articles_page.object_list[0].title }}</h2></a>
+					</li>
+			        <li> 
+			        	<time>{{ articles_page.object_list[0].date|strftime('%m %Y')}}</time>
+			        </li>
+			        <li>
+			          	{% if articles_page.object_list[0].summary %}
+			            <h3>{{ articles_page.object_list[0].summary }}</h3>
+			          	{% endif %}
+			        </li>
+			    </ul>
+		    </li>
+	    </ul>
+		<li>
+			<div class='couverture-lt'>
+				<h3>Vous êtes sur un site low-tech</h3>
+			</div>
+		</li>
+	</ul>
+
+	    <ul class="recents">
+	      {% for article in articles_page.object_list[1:] %}
+	      <li>
+	         <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+	          {% if article.featured_image %}
+	        	<img src="{{ SITEURL }}/{{ article.featured_image }}" alt="{{ article.slug }}">
+	          {% endif %}
+	          <h2>{{ article.title }}</h2>
+	      	</a>
+	      		<time>{{ article.date|strftime('%m %Y')}}</time>
+	          {% if article.summary %}
+	            <p>{{ article.summary }}</p>
+	          {% endif %}
+	      </li>
+	      {% endfor %}
+    	</ul>
+      </section>
+  {% endblock content %}

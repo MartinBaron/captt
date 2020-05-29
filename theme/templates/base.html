@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ SITENAME }}</title>
+
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/style.css">
+  <link rel="shortcut icon" href="/favicon.ico" />
+ 
+</head>
+
+<body>
+	<header>
+	<h1 class="titre"><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1>
+	<nav>
+    
+		<ul class="navigation">
+        <li>
+          <div class = penser-container>
+            <a href="{{ SITEURL }}/category/penser.html">penser</a>
+          </div>
+          <div class ="penser-border">
+               ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉<br/>
+               ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉<br/>
+               ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉   ☉<br/>
+          </div>
+        </li>
+        <li>
+          <div class = faire-container>
+            <a href="{{ SITEURL }}/category/faire.html">faire</a>
+          </div>
+          <div class ="faire-border">
+               ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈<br/>
+               ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈<br/>
+               ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈   ◈<br/>
+          </div>
+        </li>
+        <li><a href="{{ SITEURL }}/pages/a_propos.html">à propos</a></li>
+
+      </ul>
+
+    </nav>
+	</header>
+
+	    {% block content %}
+        {% endblock %}
+	<footer>
+    	<h2>
+    		<a href="{{ SITEURL }}/">{{ SITENAME }}</a>
+  		</h2>
+  		<h3>Serveur</h3>
+        	<p>
+          		Localisation: Belgique<br>
+          		Heure locale: UTC+1<br>
+          		Taille du site: 250ko</span><br>
+          		Publié le : 01/02/2019<br>
+          		Développé à Prénovel, JURA
+          </p>
+        <div id="page-size">Taille de la page : 205KO</div>
+	</footer>
+</body>

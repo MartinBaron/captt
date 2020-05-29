@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}{{ category }} | {{ SITENAME }}{% endblock title %}
+
+<body>
+{% block content %}
+	<section>
+			<div class="faire-category-{{category|lower}}">
+			  	<h3>
+			  		Des idées en vrac : certaines ont déjà pu être développées, d'autres n'ont pas encore eu cette chance... Sentez-vous libre de vous en emparer.
+			  	</h3>
+			</div>
+			<div class="penser-category-{{category|lower}}">
+	  			<h3>
+	    			Des reflexions mises à l'écrit sur des sujets divers, sous des formes variées.<br/> J'espère qu'elles vous inspireront.
+	  			</h3>
+	  		</div>
+			<ul class="{{category|lower}}">
+		      {% for article in articles %}
+		      <li>
+		          <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+		          {% if article.featured_image %}
+		            <img src="{{ SITEURL }}/{{ article.featured_image }}" alt="{{ article.slug }}">
+		          {% endif %}
+		          <h2>{{ article.title }}</h2></a>
+		          {% if article.summary %}
+		            <p>{{ article.summary }}</p>
+		          {% endif %}
+		          <time>{{ article.date|strftime('%M %Y')}}</time>
+		      </li>
+		      {% endfor %}
+	    	</ul>
+      </section>
+  {% endblock content %}
+

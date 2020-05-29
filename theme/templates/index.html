@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+<body>
+	{% block content %}
+	<section>
+    	
+	<ul class="global-couverture">   
+	    <li>
+			<a style="display:block" href="{{ SITEURL }}/{{ articles_page.object_list[0].url }}" title="Permalink to {{ articles_page.object_list[0].title|striptags }}">
+		    	<div class="container">
+		    		{% if articles_page.object_list[0].featured_image %}
+		          		<img src="{{ SITEURL }}/{{ articles_page.object_list[0].featured_image }}" alt="image de couverture">
+			        {% endif %}
+
+			    	<ul class = 'couverture-titles'>
+				        <li>
+				        	<h1>{{ articles_page.object_list[0].title }}</h1>
+						</li><!--
+				        --><li>
+				          	{% if articles_page.object_list[0].summary %}
+				            <h3>{{ articles_page.object_list[0].summary }}</h3>
+				          	{% endif %}
+				        </li><!--
+				        --><li> 
+				        	<time>{{ articles_page.object_list[0].date|strftime('%m / %Y')}}</time>
+				        </li><!--
+				    --></ul>
+				</div>
+			</a>
+		<li>
+			<div class='container-about'>
+				<h3>Vous êtes sur un site low-tech</h3>
+			</div>
+		</li>
+	</ul>
+
+	    <ul class="recents">
+
+	      {% for article in articles_page.object_list[1:] %}
+	      <li>
+	      	<div class="container">
+	        	<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+		          {% if article.featured_image %}
+		        	<img src="{{ SITEURL }}/{{ article.featured_image }}" alt="{{ article.slug }}">
+		          {% endif %}</a>
+		        <ul class = 'couverture-titles'>
+		        	<li>
+		        		<h2>{{ article.title }}</h2>
+		      		</li>
+		      		<li >
+		          		{% if article.summary %}
+		            		<h4>{{ article.summary }}</p></h4>
+		          		{% endif %}
+		          	</li>
+		          	<li class="push">
+		      			<time>{{ article.date|strftime('%m %Y')}}</time>
+		      		</li>
+		        </ul>
+		    </div>
+	      </li>
+	      {% endfor %}
+    	</ul>
+      </section>
+  {% endblock content %}

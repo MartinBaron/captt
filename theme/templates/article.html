@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+	<h1>{{ article.title }}</h1>
+	<img href="{{ SITEURL }}/{{article.featured_image}}">
+	<h2>{{article.summary}}
+  	<div>
+    	{{ article.content }}
+  	</div>
+  	{% if article.next_url %}
+	<a href="{{article.next_url}}">Lire autre chose</a>
+	{% endif %}
+
+</section>
+
+{% endblock %}
