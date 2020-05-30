@@ -13,23 +13,29 @@
 			        {% endif %}
 
 			    	<ul class = 'couverture-titles'>
+				      <li> 
+				        	{% if articles_page.object_list[0].category == "penser" %}
+				        	<div class="art-index-penser">☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉</div>
+				        	{% endif %}
+				        	{% if articles_page.object_list[0].category == "faire" %}
+				        	<div class="art-index-faire">◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈</div>
+				        	{% endif %}
+				        </li>
 				        <li>
 				        	<h1>{{ articles_page.object_list[0].title }}</h1>
-						</li><!--
-				        --><li>
+						</li>
+				        <li>
 				          	{% if articles_page.object_list[0].summary %}
 				            <h3>{{ articles_page.object_list[0].summary }}</h3>
 				          	{% endif %}
-				        </li><!--
-				        --><li> 
-				        	<time>{{ articles_page.object_list[0].date|strftime('%m / %Y')}}</time>
-				        </li><!--
-				    --></ul>
+				        </li>
+
+				   </ul>
 				</div>
 			</a>
-		<li>
+		<li id="about-cover">
 			<div class='container-about'>
-				<h3>Vous êtes sur un site low-tech</h3>
+				<h3> </h3>
 			</div>
 		</li>
 	</ul>
@@ -44,6 +50,14 @@
 		        	<img src="{{ SITEURL }}/{{ article.featured_image }}" alt="{{ article.slug }}">
 		          {% endif %}</a>
 		        <ul class = 'couverture-titles'>
+		        	<li> 
+				        	{% if article.category == "penser" %}
+				        	<div class="art-index-penser">☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉</div>
+				        	{% endif %}
+				        	{% if article.category == "faire" %}
+				        	<div class="art-index-faire">◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈</div>
+				        	{% endif %}
+				    </li>
 		        	<li>
 		        		<h2>{{ article.title }}</h2>
 		      		</li>
@@ -52,9 +66,7 @@
 		            		<h4>{{ article.summary }}</p></h4>
 		          		{% endif %}
 		          	</li>
-		          	<li class="push">
-		      			<time>{{ article.date|strftime('%m %Y')}}</time>
-		      		</li>
+
 		        </ul>
 		    </div>
 	      </li>

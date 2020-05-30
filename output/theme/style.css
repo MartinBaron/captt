@@ -24,8 +24,8 @@ body {
 	color: rgb(57,47,86);
 }
 
-.titre:hover{
-	font-size:3em;
+.titre a:hover{
+	opacity:0.8;
 }
 
 
@@ -40,9 +40,9 @@ display:inline-block;
 }
 
 .penser-border{
-	position:fixed;
-	top:3%;
-	right:5%;
+	position:absolute;
+	top:9%;
+	right:12%;
 	display:none;
 	color:rgb(126,110,54);
 	font-size:1em;
@@ -50,9 +50,9 @@ display:inline-block;
 
 
 .faire-border{
-	position:fixed;
-	top:3%;
-	right:5%;
+	position:absolute;
+	top:9%;
+	right:12%;
 	display:none;
 	color:rgb(245,134,136);
 	font-size:1em;
@@ -68,11 +68,20 @@ display:inline-block;
 .navigation {
 	display:flex;
 	justify-content: space-between;
-	margin-right:7em;
 	font-size:3em;
 	list-style-type: none;
 	margin-top:0em;
 	margin-bottom:0em;
+}
+
+.navigation li:nth-child(3){
+	position:relative;
+	top:-4em;
+	right:1%;
+}
+
+.navigation li:hover{
+	opacity:0.8;
 }
 
 a{
@@ -107,6 +116,13 @@ header {
 .global-couverture li:nth-child(2)
 {
     flex: 1;
+
+}
+
+#about-cover{
+	background-image: url("http://localhost:8000/images/captt_diagramm.png");
+	background-repeat:no-repeat;
+	background-size:cover;
 }
 
 /*CONTAINER*/
@@ -115,11 +131,11 @@ header {
 }
 
 .container-about{
-/*background-color:  rgb(57,47,86)*/ }
+}
 
 
 .container img {
-width:100%;
+	margin-bottom: -0.5%;
 }
 
 .container:hover .couverture-titles{
@@ -127,7 +143,7 @@ width:100%;
 }
 
 .container img{
-	transition: .5s ease;
+	transition: .2s ease-in;
 }
 
 .container:hover img{
@@ -163,6 +179,7 @@ width:100%;
 
 .couverture-titles h1 {
 	font-size:8em;
+	top: -5%;
 }
 
 .couverture-titles h2 {
@@ -176,22 +193,34 @@ width:100%;
 	list-style-type: none;
 	flex-direction:column;
 	position:absolute;
-	top:0%;
+	top:5%;
 	flex-wrap: wrap;
 }
 
 
-.couverture-titles li:nth-child(1) {
-	flex:1;
-	margin-bottom:-7em;
-}
 .couverture-titles li:nth-child(2) {
 	flex:1;
-	width:100%;
+	margin-bottom:-9em;
 }
 .couverture-titles li:nth-child(3) {
+	flex:1;
 	width:100%;
 }
+.couverture-titles li:nth-child(1) {
+	width:100%;
+}
+
+.art-index-penser{
+	color:rgb(126,110,54);
+	font-size:3em;
+}
+
+
+.art-index-faire{
+	color:rgb(245,134,136);
+	font-size:3em;
+}
+
 
 /*RECENTS*/
 .recents {
@@ -203,7 +232,7 @@ width:100%;
 }
 
 .recents li {
-	max-width:50%;
+	max-width:100%;
 	padding: 1rem 2rem 1rem 0;
 }
 .recents img{
@@ -211,6 +240,8 @@ width:100%;
 	height:350px;
 	object-fit:cover;
 }
+
+
 
 .push{margin-top:auto;}
 
