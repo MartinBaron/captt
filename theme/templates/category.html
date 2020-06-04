@@ -3,8 +3,8 @@
 
 <body>
 {% block content %}
-	<div class = "category">
-		<div class="faire-background-{{category|lower}}">
+	<div class ="background-{{category|lower}}">
+		<div class = "category">
 			<div class="faire-category-{{category|lower}}">
 			  	<h3>
 			  		Des idées en vrac : certaines ont déjà pu être développées, d'autres n'ont pas encore eu cette chance... Sentez-vous libre de vous en emparer.
@@ -16,9 +16,7 @@
 	  			</h3>
 	  		</div>
 			<ul class="{{category|lower}}">
-			{% if category == "penser" %}
-	        	<div class="art-index-penser">☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉</div>
-	        	{% endif %}
+
 		      {% for article in articles %}
 		      <li>
 		      	<a style="display:block" href="{{ SITEURL }}/{{ article.url }}" title="Permalink to {{ article.title|striptags }}">
@@ -35,18 +33,12 @@
 		      		</div>
 		      	</div>
 		      </a>
-	        	{% if article.category == "penser" %}
-	        	<div class="art-index-penser">☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉</div>
-	        	{% endif %}
 
 		      </li>
 		      {% endfor %}
 	    	</ul>
-      </div>
-  </div>
-  <div class = "penser-background-{{category|lower}}">
-  	
-  </div>
+		  </div>
+  	</div>
 </body>
   {% endblock content %}
 

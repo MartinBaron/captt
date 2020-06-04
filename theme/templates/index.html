@@ -7,19 +7,20 @@
 	<ul class="global-couverture">   
 	    <li>
 			<a style="display:block" href="{{ SITEURL }}/{{ articles_page.object_list[0].url }}" title="Permalink to {{ articles_page.object_list[0].title|striptags }}">
-		    	<div class="container">
+		    	<div class="container-{{articles_page.object_list[0].category|lower}}">
 		    		{% if articles_page.object_list[0].featured_image %}
 		          		<img src="{{ SITEURL }}/{{ articles_page.object_list[0].featured_image }}" alt="image de couverture">
 			        {% endif %}
 
 			    	<ul class = 'couverture-titles'>
-				      <li> 
+				    <!--   <li> 
 				        	{% if articles_page.object_list[0].category == "penser" %}
 				        	<div class="art-index-penser">☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉</div>
 				        	{% endif %}
 				        	{% if articles_page.object_list[0].category == "faire" %}
 				        	<div class="art-index-faire">◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈</div>
-				        	{% endif %}
+				        	{% endif %}-->
+
 				        </li>
 				        <li>
 				        	<h1>{{ articles_page.object_list[0].title }}</h1>
@@ -36,7 +37,7 @@
 		<li id="about-cover">
 			<div class='container-about'>
 				<h3> </h3>
-			</div>
+			</div> 
 		</li>
 	</ul>
 
@@ -44,19 +45,20 @@
 
 	      {% for article in articles_page.object_list[1:] %}
 	      <li>
-	      	<div class="container">
+	      	<div class="container-{{article.category|lower}}">
 	        	<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
 		          {% if article.featured_image %}
 		        	<img src="{{ SITEURL }}/{{ article.featured_image }}" alt="{{ article.slug }}">
 		          {% endif %}</a>
 		        <ul class = 'couverture-titles'>
-		        	<li> 
+		        	<!-- <li> 
 				        	{% if article.category == "penser" %}
 				        	<div class="art-index-penser">☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉  ☉</div>
 				        	{% endif %}
 				        	{% if article.category == "faire" %}
 				        	<div class="art-index-faire">◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈  ◈</div>
-				        	{% endif %}
+				        	{% endif %}-->
+
 				    </li>
 		        	<li>
 		        		<h2>{{ article.title }}</h2>
