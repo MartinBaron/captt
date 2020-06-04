@@ -264,6 +264,19 @@ header {
 width:50%;
 }
 
+.faire-background-faire{
+	background-image: url("../images/captt_background_faire_7.png");
+	background-repeat: repeat;
+	background-size: auto;
+}
+
+.penser-background-penser{
+	background-image: url("../images/captt_background_faire_7.png");
+	background-repeat: repeat;
+	background-size: auto;
+	position:relative;
+	left:96%;
+}
 
 .faire-category-faire {
 	display : block;
@@ -350,6 +363,7 @@ width:50%;
 
 .faire li {
 	width: 100%;
+	margin-bottom:2em;
 }
 
 .faire img {
