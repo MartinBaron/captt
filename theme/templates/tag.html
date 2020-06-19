@@ -1,1 +1,36 @@
 {% extends "base.html" %}
+{% block title %}{{ SITENAME }} - {{ tag }}{% endblock %}
+
+
+
+<body>
+	{% block content %}
+	{% block content_title %}
+	<h1 id="tag-title">{{ tag }}</h1>
+	{% endblock %}
+		<div class = "category">
+			<ul class="tag">
+		      {% for article in articles %}
+		      <li>
+		      	<a style="display:block" href="{{ SITEURL }}/{{ article.url }}" title="Permalink to {{ article.title|striptags }}">
+		      	<div class = "category-container">
+		          {% if article.featured_image %}
+		            <img src="{{ SITEURL }}/{{ article.featured_image }}" alt="{{ article.slug }}">
+		          {% endif %}
+			          <div class ="category-subtitles">
+				          <h2>{{ article.title }}</h2>
+				          {% if article.summary %}
+				            <h4>{{ article.summary }}</h4>
+				          {% endif %}
+		          		  <time>{{ article.date|strftime('%M %Y')}}</time>
+		      		</div>
+		      	</div>
+		      </a>
+
+		      </li>
+		      {% endfor %}
+	    	</ul>
+		  </div>
+</body>
+  {% endblock content %}
+

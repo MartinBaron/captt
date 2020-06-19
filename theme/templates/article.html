@@ -1,16 +1,48 @@
 {% extends "base.html" %}
 {% block content %}
 <section>
-	<h1>{{ article.title }}</h1>
-	<img href="{{ SITEURL }}/{{article.featured_image}}">
-	<h2>{{article.summary}}
-  	<div>
+	<div class="article-{{article.category|lower}}">
+	<ul class="article-titles">
+		{% if article.category == "faire"%}
+		<li  style="flex:1;">
+			<img src="{{ SITEURL }}/{{article.featured_image}}" style="margin-left:unset">
+		</li>
+		{% endif %}
+		<li>
+			<ul class="article-subtitles">
+				<li>
+					<h1>{{ article.title }}</h1>
+				</li>
+				<li>
+					<h2>{{article.summary}}</h2>
+				</li>
+				<li>
+					<ul class="article-tags">
+						{% for tag in article.tags %}
+							<li>
+								<h3><a href="{{ SITEURL }}/{{ tag.url }}">{{tag}}</a></h3>
+							</li>
+						{% endfor %}
+					</ul>
+				</li>
+				<li>
+					<h4>{{article.date|strftime('%b %Y')}}</h4>
+				</li>
+			</ul>
+		</li>
+		{% if article.category == "penser"%}
+		<li  style="flex:0.95;">
+			<img src="{{ SITEURL }}/{{article.featured_image}}" style="flex:1;">
+		</li>
+		{% endif %}
+	</ul>
+	</div>
+  	<div class="content-{{article.category|lower}}">
     	{{ article.content }}
   	</div>
   	{% if article.next_url %}
 	<a href="{{article.next_url}}">Lire autre chose</a>
 	{% endif %}
-
 </section>
 
 {% endblock %}
